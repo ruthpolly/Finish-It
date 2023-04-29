@@ -6,8 +6,10 @@
     padding: 0;
 }
 
+/* main page styling */
 body {
-    font-family: Raleway, sans-serif;
+    font-family: 'Raleway', sans-serif;
+    color: #1F1F1F;
     background-color: #FF9147;
     display: flex;
     align-items: center;
@@ -16,20 +18,120 @@ body {
     width: 100vw;
 }
 
-h1,
-h2 {
-    font-family: Bruno Ace, sans-serif text-transform: uppercase;
+/* heading styling */
+header {
+    font-size: 180%;
+    font-family: 'Bruno Ace', sans-serif;
+    color: #1F1F1F;
+    font-weight: 400;
+    text-align: center;
+    background-color: #3A6EA5;
+    border: 3px solid #004E98;
+    width: 99.5%;
+    border-radius: 16px;
+    padding: 10px 0px 10px 0px;
+    position: relative;
 }
 
+h1,
+h2 {
+    font-family: 'Bruno Ace', sans-serif text-transform: uppercase;
+}
+
+/* main areas styling */
 .home-area,
 .quiz-area,
 .results-area {
     width: 600px;
     min-height: 420px;
     max-width: 80%;
-    background-color: #3A6EA5;
+    background-color: #598DC5;
     border-radius: 16px;
     border: 1px solid #004E98;
     position: relative;
     text-align: center;
 }
+
+.hide {
+    display: none;
+}
+
+.hover {
+    background-color: ;
+}
+
+/* instructions styling */
+#instructions {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 110%;
+}
+
+li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+    padding-left: 20px;
+    line-height: 20px;
+    text-align: left;
+}
+
+/* username styling */
+#username-section {
+    font-family: 'Raleway', sans-serif;
+    max-width: 60%;
+    line-height: 50px;
+    border: 3px solid #004E98;
+    border-radius: 16px;
+    background-color: #EBEBEB;
+}
+
+#username-section input {
+    width: 50%;
+    padding: 10px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #EBEBEB;
+}
+
+#username-section button {
+    border: 2px solid #004E98;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+/* input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    background-color: #E8DED9;
+    border: 2px solid #4D1D19;
+    border-radius: 4px;
+}
+
+.text-input:hover {
+    border-color: #BFA49B;
+}
+
+.sign-up-button {
+    background-color: #E8DED9;
+    color: #4D1D19;
+    font-size: 110%;
+    font-weight: bold;
+}
+
+.sign-up-button:hover {
+    background-color: #BFA49B;
+    /* color: #4D1D19; */
+}
+
+*/
+/* colors to be used
+#C0C0C0 - silver
+#1F1F1F - eerie black
+#FF9147 - tangerine
+#EBEBEB - white
+#3A6EA5 - main blue
+#004E98 - darker blue
+#598DC5 - lighter blue */
