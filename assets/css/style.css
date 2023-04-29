@@ -1,3 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Raleway&display=swap');
+
+* {
+    margin: 0 auto;
+    border: none;
+    padding: 0;
+}
+
 body {
-    background-color: red;
+    font-family: Raleway, sans-serif;
+    background-color: #FF9147;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+h1,
+h2 {
+    font-family: Bruno Ace, sans-serif text-transform: uppercase;
+}
+
+.home-area,
+.quiz-area,
+.results-area {
+    width: 600px;
+    min-height: 420px;
+    max-width: 80%;
+    background-color: #3A6EA5;
+    border-radius: 16px;
+    border: 1px solid #004E98;
+    position: relative;
+    text-align: center;
 }

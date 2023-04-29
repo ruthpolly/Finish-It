@@ -10,11 +10,11 @@
 </head>
 
 <body>
-    <section>
+    <section class="home-area">
         <header class="header-container">
             <h1>Finish It!</h1>
         </header>
-        <!-- Instructions area -->
+        <!-- instructions area -->
         <div class="container">
             <div id="instructions">
                 <h2>How to play the game:</h2>
@@ -26,7 +26,7 @@
                 </ul>
             </div>
 
-            <!-- Username area -->
+            <!-- username area -->
             <div id="username-section">
                 <input aria-label="Enter username" type="text" required name="username" id="username"
                     placeholder="Username">
@@ -34,7 +34,8 @@
             </div>
         </div>
     </section>
-    <section>
+    <!-- quiz area -->
+    <section class="quiz-area">
         <header class="header-container">
             <h1>Finish It!</h1>
         </header>
@@ -48,23 +49,22 @@
             <button aria-label="Option 4" class="option hover" id="option4">Option 4</button>
         </div>
         <div class="controls">
-            <!-- Buttons have onclick attribute with necessary functions -->
             <button aria-label="Home" class="btn-home hover" onclick="goToHome()" id="home-btn">Home</button>
             <button aria-label="Next" onclick="nextQuestion()" class="btn-next hover" id="next">Next</button>
         </div>
+        <!-- score area -->
         <div id="score-section">
             <p>Score: <span id="user-score">0</span> /10</p>
         </div>
     </section>
-
-    <section class="results hidden">
+    <!-- results area -->
+    <section class="results-area hidden">
         <header class="header-container">
             <h1>Finish It!</h1>
         </header>
         <div id="finish">
             <div id="end-result"></div>
             <p>You got <span id="user-answer"></span> /10 correct!</p>
-            <!-- Button has onclick attribute with necessary function -->
             <button aria-label="Return to home page" onclick="goToHome()" class="btn-home hover ">Home</button>
         </div>
     </section>
