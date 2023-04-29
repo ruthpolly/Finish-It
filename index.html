@@ -10,8 +10,25 @@
 </head>
 
 <body>
-    <div id="title">Finish It!</div>
-    
+    <header class="header-container">
+        <h1>Finish It!</h1>
+    </header>
+    <div class="container">
+        <div id="instructions">
+            <h2>How to play the game:</h2>
+            <ul>
+                <li>Select the correct answer from the four options presented</li>
+                <li>If you are happy with your selection, click submit!</li>
+                <li>If you would like to return to the home page, click Home</li>
+                <li>Enter your username below to begin.</li>
+            </ul>
+        </div>
+        <div id="username-section">
+            <input aria-label="Enter username" type="text" required name="username" id="username"
+                placeholder="Username">
+            <button aria-label="Start quiz" onclick="startQuiz()" class="hover" id="start-btn">Start Quiz</button>
+        </div>
+    </div>
     <script src="assets/js/script.js"></script>
 </body>
 
