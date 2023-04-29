@@ -10,25 +10,64 @@
 </head>
 
 <body>
-    <header class="header-container">
-        <h1>Finish It!</h1>
-    </header>
-    <div class="container">
-        <div id="instructions">
-            <h2>How to play the game:</h2>
-            <ul>
-                <li>Select the correct answer from the four options presented</li>
-                <li>If you are happy with your selection, click submit!</li>
-                <li>If you would like to return to the home page, click Home</li>
-                <li>Enter your username below to begin.</li>
-            </ul>
+    <section>
+        <header class="header-container">
+            <h1>Finish It!</h1>
+        </header>
+        <!-- Instructions area -->
+        <div class="container">
+            <div id="instructions">
+                <h2>How to play the game:</h2>
+                <ul>
+                    <li>Select the correct answer from the four options presented</li>
+                    <li>If you are happy with your selection, click submit!</li>
+                    <li>If you would like to return to the home page, click Home</li>
+                    <li>Enter your username below to begin.</li>
+                </ul>
+            </div>
+
+            <!-- Username area -->
+            <div id="username-section">
+                <input aria-label="Enter username" type="text" required name="username" id="username"
+                    placeholder="Username">
+                <button aria-label="Start quiz" onclick="startQuiz()" class="hover" id="start-btn">Start Quiz</button>
+            </div>
         </div>
-        <div id="username-section">
-            <input aria-label="Enter username" type="text" required name="username" id="username"
-                placeholder="Username">
-            <button aria-label="Start quiz" onclick="startQuiz()" class="hover" id="start-btn">Start Quiz</button>
+    </section>
+    <section>
+        <header class="header-container">
+            <h1>Finish It!</h1>
+        </header>
+        <div id="question-container">
+            <p>Blah blah blank</p>
         </div>
-    </div>
+        <div class="answer-area" id="answer-buttons">
+            <button aria-label="Option 1" class="option hover" id="option1">Option 1</button>
+            <button aria-label="Option 2" class="option hover" id="option2">Option 2</button>
+            <button aria-label="Option 3" class="option hover" id="option3">Option 3</button>
+            <button aria-label="Option 4" class="option hover" id="option4">Option 4</button>
+        </div>
+        <div class="controls">
+            <!-- Buttons have onclick attribute with necessary functions -->
+            <button aria-label="Home" class="btn-home hover" onclick="goToHome()" id="home-btn">Home</button>
+            <button aria-label="Next" onclick="nextQuestion()" class="btn-next hover" id="next">Next</button>
+        </div>
+        <div id="score-section">
+            <p>Score: <span id="user-score">0</span> /10</p>
+        </div>
+    </section>
+
+    <section class="results hidden">
+        <header class="header-container">
+            <h1>Finish It!</h1>
+        </header>
+        <div id="finish">
+            <div id="end-result"></div>
+            <p>You got <span id="user-answer"></span> /10 correct!</p>
+            <!-- Button has onclick attribute with necessary function -->
+            <button aria-label="Return to home page" onclick="goToHome()" class="btn-home hover ">Home</button>
+        </div>
+    </section>
     <script src="assets/js/script.js"></script>
 </body>
 
