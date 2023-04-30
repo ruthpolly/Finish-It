@@ -100,33 +100,29 @@ li {
     padding: 10px;
 }
 
-/* input {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    background-color: #E8DED9;
-    border: 2px solid #4D1D19;
-    border-radius: 4px;
+/* styling for quiz area */
+#question-container p {
+    padding: 20px;
+    font-size: 130%;
+    font-weight: 600;
 }
 
-.text-input:hover {
+.answer-area button {
+    border: 2px solid #004E98;
+    border-radius: 8px;
+    padding: 10px;
+    width: 60%;
+    line-height: 20px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 120%;
+    font-weight: 500;
+}
+
+/* .text-input:hover {
     border-color: #BFA49B;
-}
+} */
 
-.sign-up-button {
-    background-color: #E8DED9;
-    color: #4D1D19;
-    font-size: 110%;
-    font-weight: bold;
-}
-
-.sign-up-button:hover {
-    background-color: #BFA49B;
-    /* color: #4D1D19; */
-}
-
-*/
 /* colors to be used
 #C0C0C0 - silver
 #1F1F1F - eerie black
