@@ -133,6 +133,15 @@ li {
     line-height: 20px;
 }
 
+#score-section {
+    font-size: 120%;
+    font-weight: 600;
+    display: flex;
+    flex-direction: row;
+    color: #EBEBEB;
+    padding: 10px;
+}
+
 /* .text-input:hover {
     border-color: #BFA49B;
 } */
