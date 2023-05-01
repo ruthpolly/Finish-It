@@ -53,14 +53,14 @@ let phrases = [
 ];
 
 // DOM elements
-const homeArea = document.getElementsByClassName("home-area");
-const quizArea = document.getElementsByClassName("quiz-area");
-const resultsArea = document.getElementsByClassName("results-area");
+let homeArea = document.getElementsByClassName("home-area");
+let quizArea = document.getElementsByClassName("quiz-area");
+let resultsArea = document.getElementsByClassName("results-area");
 
 // function to start quiz
 function startQuiz() {
-    homeArea.classList.add("hide");
-    quizArea.classList.remove("hide");
+    homeArea[0].classList.add("hide");
+    quizArea[0].classList.remove("hide");
 }
 
 console.log('connected');
