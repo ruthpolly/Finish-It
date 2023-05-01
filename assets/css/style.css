@@ -35,7 +35,8 @@ header {
 
 h1,
 h2 {
-    font-family: 'Bruno Ace', sans-serif text-transform: uppercase;
+    font-family: 'Bruno Ace', sans-serif;
+    text-transform: uppercase;
 }
 
 /* main areas styling */
@@ -56,9 +57,9 @@ h2 {
     display: none;
 }
 
-.hover {
+/* .hover {
     background-color: ;
-}
+} */
 
 /* instructions styling */
 #instructions {
