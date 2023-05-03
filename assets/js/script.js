@@ -152,5 +152,25 @@ function checkAnswer(e) {
     });
 }
 
+function nextPhrase() {
+    currentPhraseIndex++;
+    if(currentPhraseIndex < phrases.length){
+        showQuiz();
+    } else {
+        resultsPage();
+    }
+}
+
 let nextButton = document.getElementById("next")
-nextButton.addEventListener("click", () => )
+nextButton.addEventListener("click", () => {
+    if(currentPhraseIndex < phrases.length){
+        nextPhrase()
+    } else {
+        startQuiz()
+    }
+})
+
+function resultsPage() {
+    resetAnswerButtons();
+    quizPhrase.innerHTML = `Well done ${userName}! You got ${score} right.`
+}
