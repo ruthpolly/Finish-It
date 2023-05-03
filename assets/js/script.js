@@ -140,7 +140,7 @@ function checkAnswer(e) {
     let correctOption = clickedButton.dataset.correct === "true";
     if (correctOption) {
         clickedButton.classList.add("correct-option");
-        // incrementScore();
+        incrementScore();
     } else {
         clickedButton.classList.add("incorrect-option");
     }
@@ -150,6 +150,13 @@ function checkAnswer(e) {
         }
         button.disabled = true;
     });
+}
+
+function incrementScore() {
+
+    let oldScore = parseInt(document.getElementById("user-score").innerText);
+    document.getElementById("user-score").innerText = ++oldScore;
+
 }
 
 function nextPhrase() {
@@ -169,6 +176,11 @@ nextButton.addEventListener("click", () => {
         startQuiz()
     }
 })
+
+function goToHome() {
+    homeArea[0].classList.remove("hide");
+    quizArea[0].classList.add("hide")
+}
 
 function resultsPage() {
     resetAnswerButtons();
