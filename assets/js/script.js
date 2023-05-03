@@ -123,7 +123,7 @@ function showQuiz() {
         if (options.correct) {
             button.dataset.correct = options.correct;
         }
-        button.addEventListener("click", chooseOption);
+        button.addEventListener("click", checkAnswer);
     });
 }
 
@@ -133,58 +133,19 @@ function resetAnswerButtons() {
     }
 }
 
-function checkAnswer() {
-    // disableAnswerButtons();
+function checkAnswer(e) {
     let clickedButton = e.target;
-    let correctOption = currentphrase.correct;
-    if (userAnswer === correct) {
-        this.classList.add("correct-option");
+    let correctOption = clickedButton.dataset.correct === "true";
+    if (correctOption) {
+        clickedButton.classList.add("correct-option");
         // incrementScore();
     } else {
-        this.classList.add("incorrect-option");
+        clickedButton.classList.add("incorrect-option");
     }
-
-    startQuiz();
-// function to start quiz;
-// function startQuiz() {
-//     homeArea[0].classList.add("hide");
-//     quizArea[0].classList.remove("hide");
-//     // randomPhrase = phrases.sort(() => Math.random() - .5);
-//     // currentPhrase = 0;
-//     // nextPhrase();
-// }
-
-
-// function nextPhrase() {
-//     showPhrase(randomPhrase[currentPhrase]);
-// }
-
-// function showPhrase(phrase) {
-//     quizPhrase.innerText = phrase.phrase;
-//     phrase.options.forEach(answer => {
-
-//     });
-// }
-
-// function startQuiz() {
-//     homeArea[0].classList.add("hide");
-//     quizArea[0].classList.remove("hide");
-//     randomPhrase = phrases.sort(() => Math.random() - .5);
-//     currentPhrase = 0;
-//     nextPhrase();
-
-//     for (let i of phrases) {
-//         i.options.sort(() => Math.random() - .5);
-//     }
-//     quizPhrase.src = currentPhrase.phrase;
-//     option1.innerText = currentPhrase.options[0];
-//     option2.innerText = currentPhrase.options[1];
-//     option3.innerText = currentPhrase.options[2];
-//     option4.innerText = currentPhrase.options[3];
-// }
-
-// function nextPhrase() {
-//     showPhrase(randomPhrase[currentPhrase]);
-// }
-
-// function to check the answer
+    Array.from(answerButtons.children).forEach(button => {
+        if (button.dataset.correct === "true") {
+            button.classList.add("correct-option");
+        }
+        button.disabled = true;
+    });
+}
