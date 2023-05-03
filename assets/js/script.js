@@ -133,7 +133,6 @@ function resetAnswerButtons() {
     }
 }
 
-startQuiz();
 
 function checkAnswer(e) {
     let clickedButton = e.target;
@@ -161,11 +160,19 @@ function incrementScore() {
 
 function nextPhrase() {
     currentPhraseIndex++;
-    if(currentPhraseIndex < phrases.length){
+    if(currentPhraseIndex < 10){
         showQuiz();
-    } else {
-        resultsPage();
-    }
+    } else{
+        quizArea[0].classList.add("hide")
+        resultsArea[0].classList.remove("hide")
+        let endResult = document.getElementById("end-result")
+        let userName = document.getElementById("username")
+        let html = `
+        <p>Well done ${userName.value}!
+        `
+        endResult.innerHTML = html
+        userScore.innerText = `${oldscore.value}`
+}
 }
 
 let nextButton = document.getElementById("next")
@@ -180,9 +187,4 @@ nextButton.addEventListener("click", () => {
 function goToHome() {
     homeArea[0].classList.remove("hide");
     quizArea[0].classList.add("hide")
-}
-
-function resultsPage() {
-    resetAnswerButtons();
-    quizPhrase.innerHTML = `Well done ${userName}! You got ${score} right.`
 }
