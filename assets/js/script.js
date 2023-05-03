@@ -120,6 +120,10 @@ function showQuiz() {
         button.innerHTML = options.text;
         button.classList.add("btn");
         answerButtons.appendChild(button);
+        if (options.correct) {
+            button.dataset.correct = options.correct;
+        }
+        button.addEventListener("click", chooseOption);
     });
 }
 
