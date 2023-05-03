@@ -164,9 +164,13 @@ li {
     margin-top: 15px;
 }
 
-/* .text-input:hover {
-    border-color: #BFA49B;
-} */
+.correct-option {
+    background: #34eb8f;
+}
+
+.incorrect-option {
+    background: #f77740;
+}
 
 /* colors to be used
 #C0C0C0 - silver

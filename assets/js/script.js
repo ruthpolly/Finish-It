@@ -132,7 +132,19 @@ function resetAnswerButtons() {
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-startQuiz();
+
+function checkAnswer() {
+    // disableAnswerButtons();
+    let clickedButton = e.target;
+    let correctOption = currentphrase.correct;
+    if (userAnswer === correct) {
+        this.classList.add("correct-option");
+        // incrementScore();
+    } else {
+        this.classList.add("incorrect-option");
+    }
+
+    startQuiz();
 // function to start quiz;
 // function startQuiz() {
 //     homeArea[0].classList.add("hide");
