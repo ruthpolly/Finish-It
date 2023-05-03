@@ -133,6 +133,8 @@ function resetAnswerButtons() {
     }
 }
 
+startQuiz();
+
 function checkAnswer(e) {
     let clickedButton = e.target;
     let correctOption = clickedButton.dataset.correct === "true";
@@ -149,3 +151,6 @@ function checkAnswer(e) {
         button.disabled = true;
     });
 }
+
+let nextButton = document.getElementById("next")
+nextButton.addEventListener("click", () => )
