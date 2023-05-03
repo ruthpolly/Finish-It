@@ -99,13 +99,12 @@ let resultsArea = document.getElementsByClassName("results-area");
 let quizPhrase = document.getElementById("phrase");
 let answerButtons = document.getElementById('answer-buttons');
 let currentPhraseIndex = 0;
-let score = 0;
+let userScore = 0
 
 function startQuiz() {
     homeArea[0].classList.add("hide");
     quizArea[0].classList.remove("hide");
     currentPhraseIndex = 0;
-    score = 0;
     showQuiz();
 }
 
@@ -153,8 +152,8 @@ function checkAnswer(e) {
 
 function incrementScore() {
 
-    let oldScore = parseInt(document.getElementById("user-score").innerText);
-    document.getElementById("user-score").innerText = ++oldScore;
+    let oldScore = parseInt(userScore.innerText);
+    userScore.innerText = oldScore
 
 }
 
@@ -163,15 +162,15 @@ function nextPhrase() {
     if(currentPhraseIndex < 10){
         showQuiz();
     } else{
-        quizArea[0].classList.add("hide")
-        resultsArea[0].classList.remove("hide")
-        let endResult = document.getElementById("end-result")
-        let userName = document.getElementById("username")
+        quizArea[0].classList.add("hide");
+        resultsArea[0].classList.remove("hide");
+        let endResult = document.getElementById("end-result");
+        let userName = document.getElementById("username");
         let html = `
         <p>Well done ${userName.value}!
-        `
-        endResult.innerHTML = html
-        userScore.innerText = `${oldscore.value}`
+        `;
+        endResult.innerHTML = html;
+        score.innerText = `${oldScore}`;
 }
 }
 
