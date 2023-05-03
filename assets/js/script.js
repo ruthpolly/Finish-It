@@ -110,6 +110,7 @@ function startQuiz() {
 }
 
 function showQuiz() {
+    resetAnswerButtons();
     let currentPhrase = phrases[currentPhraseIndex];
     let phraseNumber = currentPhraseIndex + 1;
     quizPhrase.innerHTML = phraseNumber + ". " + currentPhrase.phrase;
@@ -122,6 +123,11 @@ function showQuiz() {
     });
 }
 
+function resetAnswerButtons() {
+    while (answerButtons.firstChild) {
+        answerButtons.removeChild(answerButtons.firstChild);
+    }
+}
 startQuiz();
 // function to start quiz;
 // function startQuiz() {
