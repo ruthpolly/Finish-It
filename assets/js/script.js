@@ -2,53 +2,93 @@
 let phrases = [
     {
         phrase: "Stop messing around and acting the ______!",
-        options: ['shoe lace', 'prankster', 'maggot', 'baby'],
-        answer: 2,
+        options: [
+            { text: 'shoe lace', correct: false },
+            { text: 'prankster', correct: false },
+            { text: 'maggot', correct: true },
+            { text: 'baby', correct: false },
+        ]
     },
     {
         phrase: "I passed Mary on the road, she was driving like she was ______.",
-        options: ['late for mass', 'going to work', 'cycling', 'walking'],
-        answer: 0,
+        options: [
+            { text: 'late for mass', correct: true },
+            { text: 'going to work', correct: false },
+            { text: 'cycling', correct: false },
+            { text: 'walking', correct: false },
+        ]
     },
     {
         phrase: "Stop crying now or I will give you ______!",
-        options: ['a punishment', 'a present', 'icecream', 'something to cry about'],
-        answer: 3
+        options: [
+            { text: 'a punishment', correct: false },
+            { text: 'a present', correct: false },
+            { text: 'icecream', correct: false },
+            { text: 'something to cry about', correct: true },
+        ]
     },
     {
         phrase: "Siobhan had a baby so we are on our way to ______.",
-        options: ['visit her', 'wet the babys head', 'go shopping', 'eat dinner'],
-        answer: 1
+        options: [
+            { text: 'visit her', correct: false },
+            { text: 'wet the babys head', correct: true },
+            { text: 'go shopping', correct: false },
+            { text: 'eat dinner', correct: false },
+        ]
     },
     {
         phrase: "Dad is home, did you ______?",
-        options: ['turn off the immersion', 'wash', 'eat', 'clean up'],
-        answer: 0
+        options: [
+            { text: 'turn off the immersion', correct: true },
+            { text: 'wash', correct: false },
+            { text: 'eat', correct: false },
+            { text: 'clean up', correct: false },
+        ]
     },
     {
         phrase: "Were you _______? Close the door after you.",
-        options: ['waiting long', 'cold outside', 'born in a field', 'on the way'],
-        answer: 2
+        options: [
+            { text: 'waiting long', correct: false },
+            { text: 'cold outside', correct: false },
+            { text: 'born in a field', correct: true },
+            { text: 'on the way', correct: false },
+        ]
     },
     {
         phrase: "Ah the car is _____ I will have to get a new one",
-        options: ['broken', 'banjaxed', 'crashed', 'dopey'],
-        answer: 1
+        options: [
+            { text: 'broken', correct: false },
+            { text: 'banjaxed', correct: true },
+            { text: 'crashed', correct: false },
+            { text: 'dopey', correct: false },
+        ]
     },
     {
         phrase: "Yeah I am _____ with the new job",
-        options: ['happy', 'delira', 'in love', 'busy'],
-        answer: 1
+        options: [
+            { text: 'happy', correct: false },
+            { text: 'delira', correct: true },
+            { text: 'in love', correct: false },
+            { text: 'busy', correct: false },
+        ]
     },
     {
         phrase: "Sure come over to my _____ for some tae",
-        options: ['bag', 'house', 'place', 'gaff'],
-        answer: 3
+        options: [
+            { text: 'bag', correct: false },
+            { text: 'house', correct: false },
+            { text: 'place', correct: false },
+            { text: 'gaff', correct: true },
+        ]
     },
     {
         phrase: "Oh I am _____ for you!",
-        options: ['scarlet', 'embarrassed', 'happy', 'wagon'],
-        answer: 0
+        options: [
+            { text: 'scarlet', correct: true },
+            { text: 'embarrassed', correct: false },
+            { text: 'happy', correct: false },
+            { text: 'wagon', correct: false },
+        ]
     },
 ];
 
@@ -58,25 +98,71 @@ let quizArea = document.getElementsByClassName("quiz-area");
 let resultsArea = document.getElementsByClassName("results-area");
 let quizPhrase = document.getElementById("phrase");
 let answerButtons = document.getElementById('answer-buttons');
-let randomPhrase, currentPhrase;
+let currentPhraseIndex = 0;
+let score = 0;
 
-// function to start quiz
 function startQuiz() {
     homeArea[0].classList.add("hide");
     quizArea[0].classList.remove("hide");
-    randomPhrase = phrases.sort(() => Math.random() - .5);
-    currentPhrase = 0;
-    nextPhrase();
+    currentPhraseIndex = 0;
+    score = 0;
+    showQuiz();
 }
 
-function nextPhrase() {
-    showPhrase(randomPhrase[currentPhrase]);
+function showQuiz() {
+    let currentPhrase = phrases[currentPhraseIndex];
+    let phraseNumber = currentPhraseIndex + 1;
+    quizPhrase.innerHTML = phraseNumber + ". " + currentPhrase.phrase;
+
+    currentPhrase.options.forEach(options => {
+        let button = document.createElement("button");
+        button.innerHTML = options.text;
+        button.classList.add("btn");
+        answerButtons.appendChild(button);
+    });
 }
 
-function showPhrase(phrase) {
-    quizPhrase.innerText = phrase.phrase;
-    phrase.options.forEach(answer => {
-        
-    })
-}
+startQuiz();
+// function to start quiz;
+// function startQuiz() {
+//     homeArea[0].classList.add("hide");
+//     quizArea[0].classList.remove("hide");
+//     // randomPhrase = phrases.sort(() => Math.random() - .5);
+//     // currentPhrase = 0;
+//     // nextPhrase();
+// }
+
+
+// function nextPhrase() {
+//     showPhrase(randomPhrase[currentPhrase]);
+// }
+
+// function showPhrase(phrase) {
+//     quizPhrase.innerText = phrase.phrase;
+//     phrase.options.forEach(answer => {
+
+//     });
+// }
+
+// function startQuiz() {
+//     homeArea[0].classList.add("hide");
+//     quizArea[0].classList.remove("hide");
+//     randomPhrase = phrases.sort(() => Math.random() - .5);
+//     currentPhrase = 0;
+//     nextPhrase();
+
+//     for (let i of phrases) {
+//         i.options.sort(() => Math.random() - .5);
+//     }
+//     quizPhrase.src = currentPhrase.phrase;
+//     option1.innerText = currentPhrase.options[0];
+//     option2.innerText = currentPhrase.options[1];
+//     option3.innerText = currentPhrase.options[2];
+//     option4.innerText = currentPhrase.options[3];
+// }
+
+// function nextPhrase() {
+//     showPhrase(randomPhrase[currentPhrase]);
+// }
+
 // function to check the answer
