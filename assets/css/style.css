@@ -57,6 +57,11 @@ h2 {
     display: none;
 }
 
+button:hover {
+    background: #004E98;
+    color: #EBEBEB;
+}
+
 /* .hover {
     background-color: ;
 } */
