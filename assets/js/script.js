@@ -100,19 +100,25 @@ let quizPhrase = document.getElementById("phrase");
 let answerButtons = document.getElementById('answer-buttons');
 let currentPhraseIndex = 0;
 let userScore = 0
+let score = document.getElementById("user-score")
 
+// function to open quiz area
 function startQuiz() {
     homeArea[0].classList.add("hide");
     quizArea[0].classList.remove("hide");
     currentPhraseIndex = 0;
     showQuiz();
+    userScore = 0
 }
 
+// function to show quiz questions
 function showQuiz() {
+    // answer buttons were repeating so the reset function was added
     resetAnswerButtons();
+    // displays question number
     let currentPhrase = phrases[currentPhraseIndex];
     let phraseNumber = currentPhraseIndex + 1;
-    quizPhrase.innerHTML = phraseNumber + ". " + currentPhrase.phrase;
+    quizPhrase.innerHTML = phraseNumber + " / 10 - " + currentPhrase.phrase;
 
     currentPhrase.options.forEach(options => {
         let button = document.createElement("button");
@@ -132,7 +138,8 @@ function resetAnswerButtons() {
     }
 }
 
-
+// checks the answers value, adds class to correct and incorrect values
+// changes colour of answers to indicate correct/incorrect
 function checkAnswer(e) {
     let clickedButton = e.target;
     let correctOption = clickedButton.dataset.correct === "true";
@@ -146,17 +153,19 @@ function checkAnswer(e) {
         if (button.dataset.correct === "true") {
             button.classList.add("correct-option");
         }
+        //disables answer buttons
         button.disabled = true;
     });
 }
 
+// function to increment the score
 function incrementScore() {
-
-    let oldScore = parseInt(userScore.innerText);
-    userScore.innerText = oldScore
-
+    userScore += 1;
+    score.innerText = `${userScore}`;
 }
 
+// repeats the show quiz function if there are questions left
+// if not, it returns the end page with final score
 function nextPhrase() {
     currentPhraseIndex++;
     if(currentPhraseIndex < 10){
@@ -170,10 +179,11 @@ function nextPhrase() {
         <p>Well done ${userName.value}!
         `;
         endResult.innerHTML = html;
-        score.innerText = `${oldScore}`;
+        score.innerText = `${userScore}`;
 }
 }
 
+// moves on to the next question
 let nextButton = document.getElementById("next")
 nextButton.addEventListener("click", () => {
     if(currentPhraseIndex < phrases.length){
@@ -185,5 +195,6 @@ nextButton.addEventListener("click", () => {
 
 function goToHome() {
     homeArea[0].classList.remove("hide");
-    quizArea[0].classList.add("hide")
+    quizArea[0].classList.add("hide");
+    resultsArea[0].classList.add("hide")
 }
