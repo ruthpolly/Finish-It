@@ -57,10 +57,15 @@ h2 {
     display: none;
 }
 
-.disabled:hover {
+button:hover {
     background: #004E98;
     color: #EBEBEB;
     transition: 400ms
+}
+
+.disabled:hover {
+    background-color: rgba(239, 239, 239, 0.3);
+    color: rgba(16, 16, 16, 0.3);
 }
 
 /* instructions styling */
@@ -180,12 +185,3 @@ li {
         color: #1F1F1F;
     }
 }
-
-/* colors to be used
-#C0C0C0 - silver
-#1F1F1F - eerie black
-#FF9147 - tangerine
-#EBEBEB - white
-#3A6EA5 - main blue
-#004E98 - darker blue
-#598DC5 - lighter blue */

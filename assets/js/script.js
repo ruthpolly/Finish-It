@@ -99,8 +99,8 @@ let resultsArea = document.getElementsByClassName("results-area");
 let quizPhrase = document.getElementById("phrase");
 let answerButtons = document.getElementById('answer-buttons');
 let currentPhraseIndex = 0;
-let userScore = 0
-let score = document.getElementById("user-score")
+let userScore = 0;
+let score = document.getElementById("user-score");
 
 // function to open quiz area
 function startQuiz() {
@@ -108,7 +108,7 @@ function startQuiz() {
     quizArea[0].classList.remove("hide");
     currentPhraseIndex = 0;
     showQuiz();
-    userScore = 0
+    userScore = 0;
 }
 
 // function to show quiz questions
@@ -125,7 +125,7 @@ function showQuiz() {
         button.innerHTML = options.text;
        button.classList.add("btn");
        answerButtons.appendChild(button);
-       button.addEventListener("click", checkAnswer)
+       button.addEventListener("click", checkAnswer);
        if (options.correct) {
            button.dataset.correct = options.correct;
        }
@@ -157,7 +157,7 @@ function checkAnswer(e) {
         }
         //disables answer buttons
         button.disabled = true;
-        button.classList.add("disabled")
+        button.classList.add("disabled");
     });
 }
 
@@ -184,21 +184,21 @@ function nextPhrase() {
         endResult.innerHTML = html;
     }
 }
-console.log(userScore)
 
 // moves on to the next question
-let nextButton = document.getElementById("next")
+let nextButton = document.getElementById("next");
 nextButton.addEventListener("click", () => {
     if(currentPhraseIndex < phrases.length){
-        nextPhrase()
+        nextPhrase();
     } else {
-        startQuiz()
+        startQuiz();
     }
-})
+});
 
+// returns user to home page
 function goToHome() {
     homeArea[0].classList.remove("hide");
     quizArea[0].classList.add("hide");
-    resultsArea[0].classList.add("hide")
-    score.innerHTML = 0
+    resultsArea[0].classList.add("hide");
+    score.innerHTML = 0;
 }
