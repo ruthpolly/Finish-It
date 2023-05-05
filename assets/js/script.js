@@ -157,6 +157,7 @@ function checkAnswer(e) {
         }
         //disables answer buttons
         button.disabled = true;
+        button.classList.add("disabled")
     });
 }
 

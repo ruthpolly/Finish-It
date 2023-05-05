@@ -57,7 +57,7 @@ h2 {
     display: none;
 }
 
-button:hover {
+.disabled:hover {
     background: #004E98;
     color: #EBEBEB;
     transition: 400ms
