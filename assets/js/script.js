@@ -101,7 +101,6 @@ let answerButtons = document.getElementById('answer-buttons');
 let currentPhraseIndex = 0;
 let userScore = 0
 let score = document.getElementById("user-score")
-let finalScore = document.getElementById("score")
 
 // function to open quiz area
 function startQuiz() {
@@ -196,8 +195,7 @@ function nextPhrase() {
         <p>Well done ${userName.value}! You got ${userScore} out of 10 right!
         `;
         endResult.innerHTML = html;
-        // finalScore.innerText = `${userScore}`;
-}
+    }
 }
 console.log(userScore)
 
@@ -215,4 +213,5 @@ function goToHome() {
     homeArea[0].classList.remove("hide");
     quizArea[0].classList.add("hide");
     resultsArea[0].classList.add("hide")
+    score.innerHTML = 0
 }
