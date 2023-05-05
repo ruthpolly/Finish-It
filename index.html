@@ -43,10 +43,10 @@
             <p id="phrase">Blah blah blank</p>
         </div>
         <div class="answer-area" id="answer-buttons">
-            <button aria-label="Option 1" class="option hover" id="option1">Option 1</button>
-            <button aria-label="Option 2" class="option hover" id="option2">Option 2</button>
-            <button aria-label="Option 3" class="option hover" id="option3">Option 3</button>
-            <button aria-label="Option 4" class="option hover" id="option4">Option 4</button>
+            <button aria-label="Option 1" class="option hover" id="option1" onclick="checkAnswer()">Option 1</button>
+            <button aria-label="Option 2" class="option hover" id="option2" onclick="checkAnswer()">Option 2</button>
+            <button aria-label="Option 3" class="option hover" id="option3" onclick="checkAnswer()">Option 3</button>
+            <button aria-label="Option 4" class="option hover" id="option4" onclick="checkAnswer()">Option 4</button>
         </div>
         <div class="controls">
             <button aria-label="Home" class="btn-home hover" onclick="goToHome()" id="home-btn">Home</button>
@@ -64,7 +64,7 @@
         </header>
         <div id="finish">
             <div id="end-result"></div>
-            <p>You got <span id="user-score">0</span> /10 correct!</p>
+            <p>You got <span id="score">0</span> /10 correct!</p>
             <button aria-label="Return to home page" onclick="goToHome()" class="btn-home hover ">Home</button>
         </div>
     </section>

@@ -101,6 +101,7 @@ let answerButtons = document.getElementById('answer-buttons');
 let currentPhraseIndex = 0;
 let userScore = 0
 let score = document.getElementById("user-score")
+let finalScore = document.getElementById("score")
 
 // function to open quiz area
 function startQuiz() {
@@ -128,9 +129,10 @@ function showQuiz() {
         if (options.correct) {
             button.dataset.correct = options.correct;
         }
-        button.addEventListener("click", checkAnswer);
+
     });
 }
+// button.addEventListener("click", checkAnswer);
 
 function resetAnswerButtons() {
     while (answerButtons.firstChild) {
@@ -176,12 +178,13 @@ function nextPhrase() {
         let endResult = document.getElementById("end-result");
         let userName = document.getElementById("username");
         let html = `
-        <p>Well done ${userName.value}!
+        <p>Well done ${userName.value}! You got ${userScore} out of 10 right!
         `;
         endResult.innerHTML = html;
-        score.innerText = `${userScore}`;
+        // finalScore.innerText = `${userScore}`;
 }
 }
+console.log(userScore)
 
 // moves on to the next question
 let nextButton = document.getElementById("next")
