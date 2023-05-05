@@ -133,20 +133,6 @@ function showQuiz() {
     });
 }
 
-// let btns = document.getElementsByClassName("btn")
-// btns.addEventListener("click", () => {
-//     if(){
-//         checkAnswer()
-// }})
-
-
-// for (let i = 0; i < answerButtons.length; i++) {
-//     answerButtons[i].addEventListener("click", checkAnswer);
-// }
-
-
-// let btns = document.getElementsByClassName("btn");
-// btns.addEventListener("click", checkAnswer);
 
 function resetAnswerButtons() {
     while (answerButtons.firstChild) {
