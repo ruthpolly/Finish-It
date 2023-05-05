@@ -124,18 +124,28 @@ function showQuiz() {
     currentPhrase.options.forEach(options => {
         let button = document.createElement("button");
         button.innerHTML = options.text;
-        button.classList.add("btn");
-        answerButtons.appendChild(button);
-        if (options.correct) {
-            button.dataset.correct = options.correct;
-        }
+       button.classList.add("btn");
+       answerButtons.appendChild(button);
+       button.addEventListener("click", checkAnswer)
+       if (options.correct) {
+           button.dataset.correct = options.correct;
+       }
 
     });
 }
 
-for (let i = 0; i < answerButtons.length; i++) {
-    answerButtons[i].addEventListener("click", checkAnswer);
-}
+// let btns = document.getElementsByClassName("btn")
+// btns.addEventListener("click", () => {
+//     if(){
+//         checkAnswer()
+// }})
+
+
+// for (let i = 0; i < answerButtons.length; i++) {
+//     answerButtons[i].addEventListener("click", checkAnswer);
+// }
+
+
 // let btns = document.getElementsByClassName("btn");
 // btns.addEventListener("click", checkAnswer);
 
