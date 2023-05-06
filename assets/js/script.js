@@ -111,6 +111,9 @@ function startQuiz() {
     userScore = 0;
 }
 
+let startButton = document.getElementById("start-btn");
+startButton.addEventListener("click", startQuiz)
+
 // function to show quiz questions
 function showQuiz() {
     // answer buttons were repeating so the reset function was added
@@ -121,6 +124,7 @@ function showQuiz() {
     quizPhrase.innerHTML = phraseNumber + " / 10 - " + currentPhrase.phrase;
 
     currentPhrase.options.forEach(options => {
+        //this is to create the answer buttons and include the values
         let button = document.createElement("button");
         button.innerHTML = options.text;
        button.classList.add("btn");
