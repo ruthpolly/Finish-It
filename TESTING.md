@@ -122,11 +122,6 @@ Additional testing was taken by friends and family on a variety of devices and s
 | 1 | The final score would not display on the results page | This proved difficult to solve, ans was taking up a lot of time for a small issue, so I worked around this by deleting the p element in the html results area. I inserted the text on the results page through the JavaScript file and updated the score from there.  |
 | 2 | The quiz was skipping questions, I turned to tutor support for this and they suggested the event listener within the function was the issue. I texted this in Chrome Developer using the console log, it was not the issue. | I continued to test the issue using the console log and realised I had called the function to show a new phrase twice some how. After more testing, and no progress, I checked my html file and saw I had called it there also. So I just deleted it. Problem solved.|
 | 3 | The hover pseudo class was still applied to the buttons after clicking an option, the button diabled but it still transformed when hovered over, which could give the user the impression it was still possible to click. | Having looked on stack overflow, the best option seemed to be to add a new class in js when the button was clicked, and remove the hover effect. I felt this made the quix more static and less interactive. I checked for the rgba values of the disabled buttons in chrome developer and changed them slightly, so there would still be an effect when hovering over the buttons. |
-| 4 | |
-| 5 | |
-| 6 | |
-| 7 | |
-| 8 | |
 
 - - -
 
