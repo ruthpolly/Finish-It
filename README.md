@@ -180,6 +180,10 @@ Github Pages was used to deploy the website. The instructions to achieve this ar
 - Returning Visitors
   - To play new games, new categories.
 
+### Testing
+- All testing can be found in this file:
+![Testing](/TESTING.md)
+
 - - -
 
 ## Credits
