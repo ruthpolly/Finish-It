@@ -53,6 +53,7 @@ h2 {
     text-align: center;
 }
 
+/* hides relevant areas depending on stage of quiz */
 .hide {
     display: none;
 }
@@ -165,6 +166,7 @@ li {
     margin-top: 15px;
 }
 
+/* check answer function in js file adds these classes */
 .correct-option {
     background: #34eb8f;
 }

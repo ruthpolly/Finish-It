@@ -132,12 +132,11 @@ function showQuiz() {
        button.addEventListener("click", checkAnswer);
        if (options.correct) {
            button.dataset.correct = options.correct;
-       }
-
+       };
     });
 }
 
-
+//This function removes the old blank buttons and replaces them with above 
 function resetAnswerButtons() {
     while (answerButtons.firstChild) {
         answerButtons.removeChild(answerButtons.firstChild);
